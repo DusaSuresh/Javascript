@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: flex;
+        }
+        .sidebar{
+            height: 100vh;
+            width: 20%;
+            border: 1px solid grey;
+            background-color: lightgray;
+        }
+        .bodyContainer{
+            height: 100vh;
+            width: 80%;
+            border: 1px solid grey;
+        }
+        .head, .foo {
+            height: 20vh;
+            background-color: lightgreen;
+        }
+        .art{
+            height: 60vh;
+            background-color: lightblue;
+        }
+    </style>
+    <title>Flexbox 3</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">Nav</div>
+        <div class="bodyContainer">
+            <header>
+                <div class="head">Header</div>
+            </header>
+            <article>
+                <div class="art">Article</div>
+            </article>
+            <footer>
+                <div class="foo">Footer</div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

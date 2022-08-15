@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .subItem, .secSubItem, .thiSubItem,.lastChi{
+            width:33%;
+            height: 150px;
+            background-color: lightcoral;
+            margin: 2px;
+            border: 1px solid blueviolet;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+        .secSubItem{
+            height: 30px;
+        }
+        .thiSubItem{
+            height: 30px;
+        }
+        .subContainer{
+            display: flex;
+        }
+        .lastChi{
+            height: 20px;
+            background-color: whitesmoke;
+            color: lightcoral;
+        }
+        .chidItem{
+            display: flex;
+        }
+    </style>
+    <title>FlexBox Challenge</title>
+</head>
+<body>
+    <div class="container">
+        <div class="subContainer">
+            <div class="subItem">
+                <div>1</div>
+                <div class="chidItem">
+                    <div class="lastChi">1</div>
+                    <div class="lastChi">2</div>
+                    <div class="lastChi">3</div>
+                </div>
+                <div class="chidItem">
+                    <div class="lastChi">1</div>
+                    <div class="lastChi">2</div>
+                    <div class="lastChi">3</div>
+                    <div class="lastChi">4</div>
+                </div>
+                <div class="chidItem">
+                    <div class="lastChi">1</div>
+                    <div class="lastChi">2</div>
+                    <div class="lastChi">3</div>
+                    <div class="lastChi">4</div>
+                    <div class="lastChi">5</div>
+                </div>
+            </div>
+            <div class="subItem">2</div>
+            <div class="subItem">3</div>
+        </div>
+        <div class="subContainer">
+            <div class="secSubItem">1</div>
+            <div class="secSubItem">2</div>
+            <div class="secSubItem">3</div>
+            <div class="secSubItem">4</div>
+        </div>
+        <div class="subContainer">
+            <div class="thiSubItem">1</div>
+            <div class="thiSubItem">2</div>
+            <div class="thiSubItem">3</div>
+            <div class="thiSubItem">4</div>
+            <div class="thiSubItem">5</div>
+        </div>
+    </div>
+</body>
+</html>
