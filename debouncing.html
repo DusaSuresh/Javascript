@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+<body>
+    <input type="text" onkeyup="actualDebounce()"/>
+</body>
+<script>
+let counter = 0;
+const makeCall = () => {
+console.log("Make service call *****"+counter++);
+}
+
+const delayMakeServiceCall = (fn, d) => {
+	let timerId;
+	return function(){
+		let context = this, args = arguments;
+		clearTimeout(timerId);
+		timerId = setTimeout(() => {
+			fn.apply(context, arguments);
+		}, d);
+	
+	}
+
+}
+
+const actualDebounce = delayMakeServiceCall(makeCall, 300);
+</script>
+</html>

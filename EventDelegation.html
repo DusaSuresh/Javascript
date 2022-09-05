@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body>
+    <div>
+        <ul id="category">
+            <li id="laptop">Laptop</li>
+            <li id="mobile">Mobile</li>
+            <li id="fashion">Fashion</li>
+        </ul>
+    </div>
+    <div id="form">
+        <input type="text"  id="name" data-touppercase>
+        <input type="text"  id="mobile">
+        <input type="text"  id="pan">
+    </div>
+</body>
+<script>
+    // document.querySelector("#category").addEventListener('click', (e)=>{
+    //         console.log(e.target.id+ " "+ e.target.tagName);
+    //         window.location.href = "/"+e.target.id;
+    // })
+    document.querySelector("#form").addEventListener('keyup', (e)=>{
+        if(e.target.dataset.touppercase != undefined){
+            e.target.value = e.target.value.toUpperCase();
+        }
+    })
+</script>
+</html>

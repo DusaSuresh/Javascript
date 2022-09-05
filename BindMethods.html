@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply and Bind</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let name ={
+        firstName : "Suresh",
+        lastName : "Dusa",
+        fullName : function(){
+            console.log("Full Name :"+ this.firstName + " "+ this.lastName);
+        }
+    }
+    let name2 ={
+        firstName : "Rohan",
+        lastName : "Dusa",
+         }
+    name.fullName();
+    //Function borrwoing
+    name.fullName.call(name2); // In fullName function, now name2 object will be accessible.
+
+    // Second way to use Call Method.
+    let completeName = function(hometown, state){
+        console.log(this.firstName + " "+ this.lastName+" "+hometown + " "+ state);
+    }
+    completeName.call(name);
+    completeName.call(name2);
+    completeName.call(name, "Sircilla", "Telangana");
+
+    // Only difference between call and apply method is passing the arguments.
+    // Here will pass arguments in an array.
+    completeName.apply(name2, ["Sircilla", "Telangana"]);
+
+    let bindCompleteName = completeName.bind(name, "Sircilla", "Telangana");
+
+    // Polyfill for Bind
+
+    Function.prototype.myBind = function(...args){ // these arguments which we are passing while calling myBind method
+        let obj = this;
+        params = args.slice(1); // will remove the first element from array and returns rest
+        return function(...args2){ // these args which we are passing while call polyFillBind method.
+            obj.apply(args[0],[...params, ...args2]);
+        }
+    }
+
+    let polyFillBind = completeName.myBind(name, "Sircilla");
+    polyFillBind("Telangana");
+
+</script>
+</html>
